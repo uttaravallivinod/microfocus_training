@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="81013ce6-0136-4303-b4ab-11c7f89ae621">
+  <descriptionCdata><![CDATA[81013ce6-0136-4303-b4ab-11c7f89ae621.a7a1e638-3c59-4659-9247-ab234862bb85.description=This operation runs a SQL command.\n\nInputs\:\n    DBServerName - The hostname or ip address of the database server.\n    DbType - The type of database to connect to. \nValid values\: Oracle, MSSQL, Sybase, Netcool, DB2, PostgreSQL and Custom.\nDefault value\: Oracle\n    Username - The username to use when connecting to the database.\n    Password -  The password to use when connecting to the database.\n    instance - The name instance (for MSSQL Server). Leave it blank for default instance.\n    DbPort - The port to connect to.\nDefault values\: Oracle\: 1521, MSSQL\: 1433, Sybase\: 5000, Netcool\: 4100, DB2\: 50000, PostgreSQL\: 5432.\n    Database - The name of the database.\n    authenticationType - The type of authentication used to access the database (applicable only to MSSQL type). \nValid values\: sql, windows (for MSSQL)\nDefault value\: sql\n    dbClass - The classname of the JDBC driver to use.\n    dbURL - The url required to load up the driver and make your connection.\n    ssl - Specifies if the communication will be encrypted using Secure Sockets Layer (SSL) (only applicable for PostgreSQL).\nValid values\: true, false\n    SSLMode - Specifies the different levels of protection SSL can provide. If the ssl input is set to true, SSLMode must be specified, otherwise it will be ignored (only applicable for PostgreSQL).\nValid values\: allow, prefer, require, verify-ca, verify-full\n    SSLCert - Specifies the full path for the certificate file (only applicable for PostgreSQL).\n    SSLKey - Specifies the full path for the key file which must be in DER format. Check the notes section for more details about conversion to DER format (only applicable for PostgreSQL).\n    SSLRootCert - Specifies the full path of the SSL root certificate (only applicable for PostgreSQL).\n    Command - The command to execute.\n    timeout - Seconds to wait before timing out the SQL command execution. When the default value is used, there is no limit on the amount of time allowed for a running command to complete.\nDefault value\: 0\n    databasePoolingProperties - Properties for database pooling configuration. This parameter replaces the databasePooling.properties file from 9x version (you may copy-paste the file content here). Pooling is disabled by default. For more details check the /Library/Operations/Database/JDBC folder description.\nExample\: db.pooling.enable\=true\n    resultSetType - the result set type. See JDBC folder description for more details.\nValid values\: TYPE_FORWARD_ONLY, TYPE_SCROLL_INSENSITIVE,TYPE_SCROLL_SENSITIVE.\nDefault value\: TYPE_FORWARD_ONLY\n    resultSetConcurrency - the result set concurrency. See JDBC folder description for more details.\nValid values\: CONCUR_READ_ONLY, CONCUR_UPDATABLE\nDefault value\: CONCUR_READ_ONLY\n\nResults\:\n    returnResult - This is the primary output. It contains the "Command completed successfully" message if the operation succeeded, or a failure message otherwise.\n    outputText - The return result of SQL command.\n    updateCount - The update count of the command executed.\n\nResponses\:\n    success - The command was executed successfully.\n    failure - Failed to execute the command.\n\nNotes\:\n1. Check the JDBC folder description for details on how to load database connectors.\n2. In case of using subprograms like (GET_LINE, GET_LINES, NEW_LINE, PUT, PUT_LUNE) from DBMS_OUTPUT package, the DBMS_OUTPUT.ENABLE(<buffer_size>) declaration should be used before of these calls.\n3. Use the 'Command' input with caution as it can expose the target system to security risks. By exposing the 'Command' input as a prompt to the user, it will enable the user to execute any SQL command on the target system taking into account the permissions of the credentials given as inputs.\n4. SSL encryption only works for PostgreSQL.\n5. Database pooling is not supported when "ssl"\=true (only applicable for PostgreSQL).\n6. A PEM key can be converted to DER format using the openssl command\: openssl pkcs8 -topk8 -inform PEM -in my.key -outform DER -out my.key.der.\n7. For information on how to generate certificates, how to setup the postgress server to accept SSL connections and supported SSL modes please refer to the PostgreSQL official documentation.\n8. Steps for creating the SSL certificates can be found in the CP's release notes, under the "Use" section. \n\nNote\:\n    Check the JDBC folder description for details on how to load database connectors.
+]]></descriptionCdata>
+  <annotation></annotation>
+  <name>trigger_flow</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="f932c77e-7768-4abc-99db-9b2089993aa5">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="7f0f7eb2-0844-43e4-95d4-dd58051a5384">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>false</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="b951e85b-f518-42dc-8c4d-1355e38d2d4b">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="924659e1-9ebe-4a33-8c5c-f8c1268ac5e0">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="a7a1e638-3c59-4659-9247-ab234862bb85">
+      <annotation>81013ce6-0136-4303-b4ab-11c7f89ae621.a7a1e638-3c59-4659-9247-ab234862bb85.description</annotation>
+      <name>trigger creation</name>
+      <bounds>
+        <x>309.0</x>
+        <y>123.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="52b000a2-f2e2-4e96-bb98-70bd133c0c0b">
+          <annotation></annotation>
+          <fromContextKey>postgres_properties/DB_HOST</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>DBServerName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="04307209-88bf-4391-bc7a-1e932c48bd84">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>DbType</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>PostgreSQL</value>
+          <record>false</record>
+        </staticBinding>
+        <identityBinding id="5452ef29-168e-4108-b4ef-eb2b3c2011bc">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>Username</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <link>
+            <refId>01ab384b-b9f7-4db2-b955-3ce85f96266a</refId>
+            <refName>postgres</refName>
+          </link>
+          <identityAttribute>USERNAME</identityAttribute>
+        </identityBinding>
+        <identityBinding id="a99de7be-95f5-40b2-9837-da939a309fc1">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>ENCRYPTED</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>Password</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <link>
+            <refId>01ab384b-b9f7-4db2-b955-3ce85f96266a</refId>
+            <refName>postgres</refName>
+          </link>
+          <identityAttribute>PASSWORD</identityAttribute>
+        </identityBinding>
+        <staticBinding id="0e9979f5-2862-4f7f-ba61-44c73b307cb2">
+          <annotation></annotation>
+          <fromContextKey>postgres_properties/DB_PORT</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>DBPort</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="e26c4449-9221-476b-9497-b90312407c02">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>Database</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>dvdrental</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="fb995785-ad1a-4e5b-9a81-567361c9d871">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>Command</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value>CREATE OR REPLACE FUNCTION log_last_name_changes()
+  RETURNS TRIGGER 
+  LANGUAGE PLPGSQL
+  AS
+$$
+BEGIN
+	IF NEW.last_name &lt;&gt; OLD.last_name THEN
+		 INSERT INTO actor_audits(actor_id,last_name,changed_on)
+		 VALUES(OLD.id,OLD.last_name,now());
+	END IF;
+
+	RETURN NEW;
+END;
+$$</value>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="6f77fdac-2ce5-48d8-9c44-2edb45d360cd">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>timeout</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="e1748ccf-97a8-406a-bb3d-d3375f1850d4">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>1e1344fd-ad59-4f8f-9987-f74256507d8a</refId>
+          </destination>
+          <source>
+            <refId>a7a1e638-3c59-4659-9247-ab234862bb85</refId>
+          </source>
+          <positions>
+            <point>
+              <x>440.0</x>
+              <y>214.0</y>
+            </point>
+            <point>
+              <x>701.0</x>
+              <y>114.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+        <transition id="4bba128d-0093-4b03-b1c3-7f92bac01c25">
+          <annotation></annotation>
+          <name>failure</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0ffb45a9-a49d-4f1a-a607-7192f2a099ad</refId>
+          </destination>
+          <source>
+            <refId>a7a1e638-3c59-4659-9247-ab234862bb85</refId>
+          </source>
+          <positions>
+            <point>
+              <x>440.0</x>
+              <y>214.0</y>
+            </point>
+            <point>
+              <x>559.0</x>
+              <y>435.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>a8dd819d-158a-43c4-9648-f14e561a5381</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="e504cdc8-d02c-437a-a1a6-dbfc5d210f97">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>outputText</contextKey>
+          <expression id="96087eec-f83a-4b7e-a2a5-12cd74eeaa4f">
+            <annotation></annotation>
+            <name>Result Field: outputText</name>
+            <fieldName>outputText</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="1e1344fd-ad59-4f8f-9987-f74256507d8a">
+      <annotation></annotation>
+      <name>Resolved : success</name>
+      <bounds>
+        <x>651.0</x>
+        <y>80.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="56820482-cb4f-447c-9d71-9602c1a7245c">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>1e1344fd-ad59-4f8f-9987-f74256507d8a</refId>
+          </destination>
+          <source>
+            <refId>1e1344fd-ad59-4f8f-9987-f74256507d8a</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+    <returnStep id="0ffb45a9-a49d-4f1a-a607-7192f2a099ad">
+      <annotation></annotation>
+      <name>Error : failure</name>
+      <bounds>
+        <x>509.0</x>
+        <y>401.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="37c3a22f-f8d5-44d5-a4ac-d889d0800533">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>failure</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>0ffb45a9-a49d-4f1a-a607-7192f2a099ad</refId>
+          </destination>
+          <source>
+            <refId>0ffb45a9-a49d-4f1a-a607-7192f2a099ad</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>ERROR</returnStepType>
+      <assignments/>
+    </returnStep>
+  </steps>
+  <startSteps>a7a1e638-3c59-4659-9247-ab234862bb85</startSteps>
+</flow>

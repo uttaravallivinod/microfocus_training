@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="d16690be-2b5e-420d-ac2c-6c0b99384bdf">
-  <descriptionCdata><![CDATA[d16690be-2b5e-420d-ac2c-6c0b99384bdf.3d18acfd-3fc3-45d7-90ad-78f6d7168cf5.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
-d16690be-2b5e-420d-ac2c-6c0b99384bdf.4615dca5-2987-483b-a612-197f6c6e27bb.description=<pre>\n\nDisplays a message to the user.\n\nInputs\:\n  message - The message text to display\n  title - The title on the message window. Defaults to "Status message".\n\nResponses\:\n  Always returns success.\n\nExamples\:\n  In order to display the message "Finished" to the user, go to the \n  detail screen for the input named "message" and change the Otherwise option\n  from Prompt User to Use Constant.  Then enter the text "Finished" into the\n  Constant Value field.\n\n  References to flow variables in the Contant Value field are expanded so that\n  the text may be dynamic.  Flow variable references are of the form\n  ${variable}.  For example, the text\:\n     ${count} systems were modified \n  could be used to display a message about the number of systems that were\n  repaired, whose value is in the flow variable "count".\n\n  When the message is displayed, it will properly render any embedded html\n  tags, which permits creating messages with more advanced formatting.  For \n  example to display a message in italics you could use\:\n    <i>This is important</i>\n  or to display a message in red\:\n    <i>This is <span style\="color\: red">really </span> important</i>\n\n  You can create messages that contain multiple lines by entering a multiple\n  line message in the Constant Value field, or by using HTML <BR> tags for line\n  breaks.  Note that \\n characters are displayed literally and are not used for\n  creating multiple lines.\n\n</pre>\n
-d16690be-2b5e-420d-ac2c-6c0b99384bdf.94b63f00-951f-4549-8709-0d56f0a60846.prompt=To Match\:
-d16690be-2b5e-420d-ac2c-6c0b99384bdf.a64ce6bc-c2db-42d3-acb3-3b1d0be4bbd6.prompt=Type of Match to Perform\:
-d16690be-2b5e-420d-ac2c-6c0b99384bdf.e3ed2afd-5d3f-47fd-91ee-9ab26da7e1dd.prompt=Match To\:
-d16690be-2b5e-420d-ac2c-6c0b99384bdf.f34f7ad7-cf56-4b3a-a97c-dcff33a75207.prompt=Ignore Case\:
+  <descriptionCdata><![CDATA[d16690be-2b5e-420d-ac2c-6c0b99384bdf.4615dca5-2987-483b-a612-197f6c6e27bb.description=<pre>\n\nDisplays a message to the user.\n\nInputs\:\n  message - The message text to display\n  title - The title on the message window. Defaults to "Status message".\n\nResponses\:\n  Always returns success.\n\nExamples\:\n  In order to display the message "Finished" to the user, go to the \n  detail screen for the input named "message" and change the Otherwise option\n  from Prompt User to Use Constant.  Then enter the text "Finished" into the\n  Constant Value field.\n\n  References to flow variables in the Contant Value field are expanded so that\n  the text may be dynamic.  Flow variable references are of the form\n  ${variable}.  For example, the text\:\n     ${count} systems were modified \n  could be used to display a message about the number of systems that were\n  repaired, whose value is in the flow variable "count".\n\n  When the message is displayed, it will properly render any embedded html\n  tags, which permits creating messages with more advanced formatting.  For \n  example to display a message in italics you could use\:\n    <i>This is important</i>\n  or to display a message in red\:\n    <i>This is <span style\="color\: red">really </span> important</i>\n\n  You can create messages that contain multiple lines by entering a multiple\n  line message in the Constant Value field, or by using HTML <BR> tags for line\n  breaks.  Note that \\n characters are displayed literally and are not used for\n  creating multiple lines.\n\n</pre>\n
+d16690be-2b5e-420d-ac2c-6c0b99384bdf.7d53166b-7384-42f2-b551-088b5e3d2e37.prompt=To Match\:
+d16690be-2b5e-420d-ac2c-6c0b99384bdf.84defc8a-c7ff-4de6-9574-6fe11e3a37c8.description=<pre>This operation checks whether a string matches another string, using a specific matching rule. The "toMatch" input is the string that is checked for matching the "matchTo" expression. \n\nInputs\:\n    matchType - The type of match to perform.\nValid values\: Exact Match, Contains, Contains Once, Does Not Contain, Match All Words, Match No Words, Regex (The values are not case sensitive)\nDefault value\: Exact Match\n    toMatch - The string that is checked for matching.\n    matchTo - The string to match against.\nExample\: If "matchType" is \u201CRegEx\u201D, the "matchTo" input is a regular expression such as\: ^-?\\d+(([\\.,]\\d+)?)+$. \n    ignoreCase - Specifies whether to ignore case when matching or not.\nValid values\: False, True\nDefault value\: False\n\nResults\:\n    returnResult - This is the primary output. It contains the string "Matches" if the "toMatch" string matches the "matchTo" string. Otherwise, it contains the string "Does Not Match".  \n\nResponses\:\n    success - The operation completed as stated in the description.\n    failure - The operation completed unsuccessfully.\n</pre>
+d16690be-2b5e-420d-ac2c-6c0b99384bdf.8a2403de-2567-44d1-b264-51ca26e750d9.prompt=Match To\:
+d16690be-2b5e-420d-ac2c-6c0b99384bdf.a201de87-44f6-4420-b24d-66014f8ddc12.prompt=Type of Match to Perform\:
+d16690be-2b5e-420d-ac2c-6c0b99384bdf.eb82f5c1-55d0-46b0-8462-9b3bc795ecd6.prompt=Ignore Case\:
 d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.description=<pre>\n\nDisplays a message to the user.\n\nInputs\:\n  message - The message text to display\n  title - The title on the message window. Defaults to "Status message".\n\nResponses\:\n  Always returns success.\n\nExamples\:\n  In order to display the message "Finished" to the user, go to the \n  detail screen for the input named "message" and change the Otherwise option\n  from Prompt User to Use Constant.  Then enter the text "Finished" into the\n  Constant Value field.\n\n  References to flow variables in the Contant Value field are expanded so that\n  the text may be dynamic.  Flow variable references are of the form\n  ${variable}.  For example, the text\:\n     ${count} systems were modified \n  could be used to display a message about the number of systems that were\n  repaired, whose value is in the flow variable "count".\n\n  When the message is displayed, it will properly render any embedded html\n  tags, which permits creating messages with more advanced formatting.  For \n  example to display a message in italics you could use\:\n    <i>This is important</i>\n  or to display a message in red\:\n    <i>This is <span style\="color\: red">really </span> important</i>\n\n  You can create messages that contain multiple lines by entering a multiple\n  line message in the Constant Value field, or by using HTML <BR> tags for line\n  breaks.  Note that \\n characters are displayed literally and are not used for\n  creating multiple lines.\n\n</pre>\n
 ]]></descriptionCdata>
   <annotation></annotation>
@@ -41,15 +41,21 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
-    <step id="3d18acfd-3fc3-45d7-90ad-78f6d7168cf5">
-      <annotation>d16690be-2b5e-420d-ac2c-6c0b99384bdf.3d18acfd-3fc3-45d7-90ad-78f6d7168cf5.description</annotation>
+    <step id="84defc8a-c7ff-4de6-9574-6fe11e3a37c8">
+      <annotation>d16690be-2b5e-420d-ac2c-6c0b99384bdf.84defc8a-c7ff-4de6-9574-6fe11e3a37c8.description</annotation>
       <name>String Comparator</name>
       <bounds>
-        <x>445.0</x>
-        <y>149.0</y>
+        <x>379.0</x>
+        <y>126.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="e56d28af-0967-4d82-b572-3ae88fbb3ef3">
+        <baseIcon>compare.png</baseIcon>
+        <basePath>Utilities</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -63,7 +69,7 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="a64ce6bc-c2db-42d3-acb3-3b1d0be4bbd6">
+        <userInputBinding id="a201de87-44f6-4420-b24d-66014f8ddc12">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -74,7 +80,7 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
           <inputSymbol>matchType</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
-          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.a64ce6bc-c2db-42d3-acb3-3b1d0be4bbd6.prompt</prompt>
+          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.a201de87-44f6-4420-b24d-66014f8ddc12.prompt</prompt>
           <isMultiSelect>false</isMultiSelect>
           <link>
             <refId>b15a59ad-9459-43d0-83c1-faf13141cd3c</refId>
@@ -82,7 +88,7 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
           </link>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="94b63f00-951f-4549-8709-0d56f0a60846">
+        <userInputBinding id="7d53166b-7384-42f2-b551-088b5e3d2e37">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -93,11 +99,11 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
           <inputSymbol>toMatch</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
-          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.94b63f00-951f-4549-8709-0d56f0a60846.prompt</prompt>
+          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.7d53166b-7384-42f2-b551-088b5e3d2e37.prompt</prompt>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="e3ed2afd-5d3f-47fd-91ee-9ab26da7e1dd">
+        <userInputBinding id="8a2403de-2567-44d1-b264-51ca26e750d9">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -108,11 +114,11 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
           <inputSymbol>matchTo</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
-          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.e3ed2afd-5d3f-47fd-91ee-9ab26da7e1dd.prompt</prompt>
+          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.8a2403de-2567-44d1-b264-51ca26e750d9.prompt</prompt>
           <isMultiSelect>false</isMultiSelect>
           <sourceDelimiter>|</sourceDelimiter>
         </userInputBinding>
-        <userInputBinding id="f34f7ad7-cf56-4b3a-a97c-dcff33a75207">
+        <userInputBinding id="eb82f5c1-55d0-46b0-8462-9b3bc795ecd6">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
           <assignToContext>false</assignToContext>
@@ -123,7 +129,7 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
           <inputSymbol>ignoreCase</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
-          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.f34f7ad7-cf56-4b3a-a97c-dcff33a75207.prompt</prompt>
+          <prompt>d16690be-2b5e-420d-ac2c-6c0b99384bdf.eb82f5c1-55d0-46b0-8462-9b3bc795ecd6.prompt</prompt>
           <isMultiSelect>false</isMultiSelect>
           <link>
             <refId>96a1ed25-cdc9-4ff6-8fba-e9c044c5ca53</refId>
@@ -133,7 +139,7 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
         </userInputBinding>
       </bindings>
       <transitions>
-        <transition id="f5d369f3-a110-4cf0-8d61-da457973108c">
+        <transition id="c2670a33-8338-42e2-93bf-c0b00c7549d2">
           <annotation></annotation>
           <name>success</name>
           <command>NEXT</command>
@@ -145,12 +151,12 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
             <refId>f5bb465b-b85b-4af7-816b-51608c7628c5</refId>
           </destination>
           <source>
-            <refId>3d18acfd-3fc3-45d7-90ad-78f6d7168cf5</refId>
+            <refId>84defc8a-c7ff-4de6-9574-6fe11e3a37c8</refId>
           </source>
           <positions>
             <point>
-              <x>495.0</x>
-              <y>183.0</y>
+              <x>429.0</x>
+              <y>160.0</y>
             </point>
             <point>
               <x>801.0</x>
@@ -162,7 +168,7 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
             <y>0.0</y>
           </labelPosition>
         </transition>
-        <transition id="3b36918d-b040-4568-8bb3-693bdc69af82">
+        <transition id="3ed78b5d-210b-4e2e-98e8-b2b3572bf07a">
           <annotation></annotation>
           <name>failure</name>
           <command>NEXT</command>
@@ -174,12 +180,12 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
             <refId>4615dca5-2987-483b-a612-197f6c6e27bb</refId>
           </destination>
           <source>
-            <refId>3d18acfd-3fc3-45d7-90ad-78f6d7168cf5</refId>
+            <refId>84defc8a-c7ff-4de6-9574-6fe11e3a37c8</refId>
           </source>
           <positions>
             <point>
-              <x>495.0</x>
-              <y>183.0</y>
+              <x>429.0</x>
+              <y>160.0</y>
             </point>
             <point>
               <x>500.0</x>
@@ -197,13 +203,13 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
         <refId>f1dafb35-6463-4a1b-8f87-8aa748497bed</refId>
       </opRef>
       <assignments>
-        <flowVariableAssignment id="c957bea0-c3ed-4250-bf9e-e3c2dd07b6d2">
+        <flowVariableAssignment id="3b7b4000-2954-4aa3-9deb-527e9a417625">
           <annotation></annotation>
           <name>assignment</name>
           <action>OVERWRITE</action>
           <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
           <contextKey>returnResult</contextKey>
-          <expression id="7613da04-5e0d-411e-be93-731e0c40dc99">
+          <expression id="913c0558-4fcf-4d83-9583-2e99569a702d">
             <annotation></annotation>
             <name>Result Field: returnResult</name>
             <fieldName>returnResult</fieldName>
@@ -223,6 +229,12 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="c52fa21b-f94f-4f69-9854-94a217c15447">
+        <baseIcon>display_report.png</baseIcon>
+        <basePath>/Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -309,6 +321,12 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="bf93f5ad-9ffb-4c17-824d-cf4be89a4015">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -353,6 +371,12 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="452e941f-4b6c-43c7-8895-4294eb0d8378">
+        <baseIcon>display_report.png</baseIcon>
+        <basePath>/Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -431,5 +455,5 @@ d16690be-2b5e-420d-ac2c-6c0b99384bdf.f5bb465b-b85b-4af7-816b-51608c7628c5.descri
       <throttleSize>0</throttleSize>
     </step>
   </steps>
-  <startSteps>3d18acfd-3fc3-45d7-90ad-78f6d7168cf5</startSteps>
+  <startSteps>84defc8a-c7ff-4de6-9574-6fe11e3a37c8</startSteps>
 </flow>

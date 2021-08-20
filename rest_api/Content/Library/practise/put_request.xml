@@ -53,6 +53,12 @@ c3ed0a83-48b2-4c3a-8f7e-759e62f3e0c7.da1d1297-8686-4b71-bda6-d110917499e1.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="6bb1ce95-6edd-43f1-abaa-a2de66029c1c">
+        <baseIcon>earth.png</baseIcon>
+        <basePath>/Networking/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -75,7 +81,7 @@ c3ed0a83-48b2-4c3a-8f7e-759e62f3e0c7.da1d1297-8686-4b71-bda6-d110917499e1.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>url</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>https://jsonplaceholder.typicode.com/posts/2</value>
+          <value>https://jsonplaceholder.typicode.com/posts/1</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="7102822b-9a1e-4dbe-a93b-f0d06352206d">
@@ -392,10 +398,10 @@ c3ed0a83-48b2-4c3a-8f7e-759e62f3e0c7.da1d1297-8686-4b71-bda6-d110917499e1.descri
           <inputSymbol>body</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <value>{
-    id: 2,
-    title: &apos;foo&apos;,
-    body: &apos;bar&apos;,
-    userId: 1,
+&quot;userId&quot;: 1,
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;foo&quot;,
+    &quot;body&quot;: &quot;bar&quot;
   }</value>
           <record>false</record>
         </staticBinding>
@@ -409,7 +415,7 @@ c3ed0a83-48b2-4c3a-8f7e-759e62f3e0c7.da1d1297-8686-4b71-bda6-d110917499e1.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>contentType</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>Content-type: application/json</value>
+          <value>application/json</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="5364229d-9986-4ff5-b691-360e8ba2f06b">
@@ -422,7 +428,7 @@ c3ed0a83-48b2-4c3a-8f7e-759e62f3e0c7.da1d1297-8686-4b71-bda6-d110917499e1.descri
           <isPersisted>true</isPersisted>
           <inputSymbol>requestCharacterSet</inputSymbol>
           <listDelimiter>,</listDelimiter>
-          <value>ISO-8859-1</value>
+          <value>utf-8</value>
           <record>false</record>
         </staticBinding>
         <staticBinding id="0bea3286-1deb-43ce-8d2e-90064b5a8139">
@@ -566,6 +572,12 @@ c3ed0a83-48b2-4c3a-8f7e-759e62f3e0c7.da1d1297-8686-4b71-bda6-d110917499e1.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="cc764458-24f2-42b6-a042-96c7cb4a9ba1">
+        <baseIcon>return_success.png</baseIcon>
+        <basePath>System</basePath>
+        <readOnly>true</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -654,6 +666,12 @@ c3ed0a83-48b2-4c3a-8f7e-759e62f3e0c7.da1d1297-8686-4b71-bda6-d110917499e1.descri
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
+      <iconSpec id="77cac591-4ac0-4164-a6bb-db0db84e86c0">
+        <baseIcon>display_report.png</baseIcon>
+        <basePath>/Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>

@@ -8,6 +8,7 @@
     <string>withdraw</string>
     <string>deposit</string>
     <string>view balance</string>
+    <string>transfer</string>
     <string>close transaction</string>
   </storage>
 </selectionList>

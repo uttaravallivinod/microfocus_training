@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selectionList id="fb85849d-81c3-4c6a-a14e-592df530f9be">
+  <descriptionCdata><![CDATA[fb85849d-81c3-4c6a-a14e-592df530f9be.description=operations
+]]></descriptionCdata>
+  <annotation>fb85849d-81c3-4c6a-a14e-592df530f9be.description</annotation>
+  <name>operations</name>
+  <storage>
+    <string>withdraw</string>
+    <string>deposit</string>
+    <string>view balance</string>
+    <string>close transaction</string>
+  </storage>
+</selectionList>
